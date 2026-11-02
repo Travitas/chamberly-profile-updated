@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chamberly - Adv. Varun Jain</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- Google Fonts for Chamberly Logo Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: "PoppinsNum", "Raleway", "Plus Jakarta Sans", "Inter", system-ui, sans-serif; }
+    .font-logo {
+      font-family: "Poppins", "Raleway", "Plus Jakarta Sans", Inter, system-ui, sans-serif;
+    }
+
+    /* ===== Light theme overrides (dark is default) ===== */
+    html, body, div, header, section, button, span, a { transition: background-color .2s ease, border-color .2s ease, color .2s ease; }
+
+    /* Backgrounds */
+    html.light .bg-\[\#050608\] { background-color: #ecedf0; }
+    html.light .bg-\[\#0a0c10\] { background-color: #f7f7f9; }
+    html.light .bg-\[\#0a0c10\]\/95 { background-color: rgba(247,247,249,.95); }
+    html.light .bg-\[\#07090d\]\/95 { background-color: rgba(247,247,249,.95); }
+    html.light .bg-\[\#11141a\] { background-color: #ffffff; }
+    html.light .bg-\[\#1a1610\] { background-color: #ffffff; }
+    html.light .bg-\[\#181c25\] { background-color: #eceef2; }
+    html.light .bg-\[\#171b23\] { background-color: #f1f2f5; }
+    html.light .bg-\[\#0d1015\] { background-color: #f3f4f7; }
+    html.light .bg-\[\#1e232d\] { background-color: #e6e8ee; }
+
+    /* Borders */
+    html.light .border-\[\#171b23\],
+    html.light .border-\[\#1c212b\] { border-color: #e2e4ea; }
+    html.light .border-\[\#2b3342\],
+    html.light .border-\[\#222836\],
+    html.light .border-\[\#262d3b\],
+    html.light .border-\[\#343d50\],
+    html.light .border-\[\#30384a\] { border-color: #d0d4dd; }
+    html.light .border-\[\#4a5265\] { border-color: #bcc1cd; }
+    html.light .border-\[\#11141a\] { border-color: #ffffff; }
+    html.light .divide-\[\#222836\] > :not([hidden]) ~ :not([hidden]) { border-color: #d0d4dd; }
+
+    /* Text */
+    html.light .text-white { color: #121317; }
+    html.light .text-neutral-300 { color: #40444f; }
+    html.light .text-\[\#cfd4de\] { color: #40444f; }
+    html.light .text-\[\#f5f6f8\] { color: #121317; }
+    html.light .text-\[\#d8dce4\],
+    html.light .text-\[\#e3e6ec\] { color: #24262e; }
+    html.light .text-\[\#a3a9b6\],
+    html.light .text-\[\#868d9c\],
+    html.light .text-\[\#9ca3b1\],
+    html.light .text-\[\#a9afbb\] { color: #5a5f6c; }
+    html.light .text-\[\#7d8494\],
+    html.light .text-\[\#6b7282\] { color: #6f7482; }
+    html.light .text-\[\#e2b04a\] { color: #9a7209; }
+    html.light .text-\[\#d4af37\] { color: #8a6d12; }
+    html.light .hover\:text-white:hover { color: #121317; }
+
+    /* =========================================================
+       CHAMBERLY PROFILE — ASTROTALK-INSPIRED VISUAL SKIN
+    ========================================================== */
+    :root {
+      --page-bg: #0b0804;
+      --page-bg-soft: #100c06;
+      --surface: #14110c;
+      --surface-raised: #1a1610;
+      --surface-soft: #211b12;
+      --surface-inset: #100c07;
+      --border: rgba(255, 247, 222, .075);
+      --border-strong: rgba(255, 222, 132, .16);
+      --text-primary: #fff9ec;
+      --text-secondary: rgba(255, 249, 236, .68);
+      --text-muted: rgba(255, 249, 236, .48);
+      --accent: #e7b94d;
+      --accent-strong: #f2d96a;
+      --accent-soft: rgba(242, 217, 106, .12);
+      --accent-gradient: linear-gradient(105deg, #f7ed7c 0%, #f0dc66 55%, #e9cf51 100%);
+      --page-gradient: radial-gradient(ellipse at 88% 0%, rgba(243, 224, 112, .075), transparent 36%), #0b0804;
+      --card-shadow: 0 2px 10px rgba(0,0,0,.12);
+      --radius-card: 15px;
+      --radius-control: 10px;
+      --font-body: "Poppins", "Raleway", "Plus Jakarta Sans", Inter, system-ui, sans-serif;
+    }
+
+    html.light {
+      --page-bg: #fffef8;
+      --page-bg-soft: #fffdf2;
+      --surface: #ffffff;
+      --surface-raised: #ffffff;
+      --surface-soft: #f7f8fa;
+      --surface-inset: #f7f8fa;
+      --border: #e9ebef;
+      --border-strong: #e5d7a5;
+      --text-primary: #28271f;
+      --text-secondary: #68675e;
+      --text-muted: #999587;
+      --accent: #bd861c;
+      --accent-strong: #9c6c12;
+      --accent-soft: rgba(242, 221, 112, .17);
+      --accent-gradient: linear-gradient(105deg, #f7ed78 0%, #f4e36d 55%, #efda5c 100%);
+      --page-gradient: #f5f6f8;
+      --card-shadow: 0 2px 12px rgba(25,35,45,.035);
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--page-gradient) !important;
+      color: var(--text-primary) !important;
+      font-family: var(--font-body) !important;
+      font-size: 13px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    body, body * { font-family: var(--font-body); }
+    .font-logo { font-family: var(--font-body) !important; font-weight: 700 !important; letter-spacing: -.045em !important; }
+
+    /* Full-width page and navigation */
+    .profile-page {
+      width: 100% !important;
+      max-width: none !important;
+      min-height: 100vh;
+      overflow: clip;
+      background: transparent !important;
+      border-left: 0 !important;
+      border-right: 0 !important;
+      padding-bottom: 5rem;
+    }
+    header.sticky {
+      background: rgba(11, 8, 4, .97) !important;
+      border-bottom: 1px solid rgba(255, 247, 222, .10) !important;
+      box-shadow: 0 2px 10px rgba(0,0,0,.08) !important;
+      backdrop-filter: blur(16px);
+    }
+    html.light .profile-page > header {
+      background: rgba(255,255,255,.97) !important;
+      border-bottom-color: rgba(90,104,98,.12) !important;
+      box-shadow: 0 2px 10px rgba(30,35,40,.035) !important;
+    }
+
+    .profile-page > header { padding-left: clamp(16px, 3.2vw, 52px) !important; padding-right: clamp(16px, 3.2vw, 52px) !important; }
+    .profile-page > header .font-logo { font-size: 25px !important; }
+    .profile-page > header nav { font-size: 14px !important; gap: clamp(14px, 2vw, 28px) !important; }
+    .profile-page > header button {
+      background: var(--surface-soft) !important;
+      border-color: var(--border-strong) !important;
+      color: var(--text-secondary) !important;
+    }
+    .profile-page > header a:hover,
+    .profile-page > header nav a:hover { color: var(--accent) !important; }
+
+    /* Breadcrumb and main profile hero — top padding matched to Astrotalk reference */
+    .profile-page > div:nth-of-type(1) {
+      margin-top: 14px !important;
+      padding-top: 6px !important;
+      padding-bottom: 10px !important;
+      padding-left: clamp(16px, 3.2vw, 52px) !important;
+      padding-right: clamp(16px, 3.2vw, 52px) !important;
+      color: var(--text-muted) !important;
+      font-size: 11px !important;
+      letter-spacing: .045em !important;
+    }
+    .profile-page > div:nth-of-type(1) .text-\[\#e2b04a\] { color: var(--accent) !important; }
+    .profile-page > div:nth-of-type(2) {
+      margin-top: 0 !important;
+      padding-left: clamp(16px, 2.2vw, 36px) !important;
+      padding-right: clamp(16px, 2.2vw, 36px) !important;
+    }
+    .profile-page > div:nth-of-type(2) > div {
+      background: var(--surface-raised) !important;
+      border: 1px solid var(--border) !important;
+      border-radius: var(--radius-card) !important;
+      box-shadow: var(--card-shadow) !important;
+      padding: clamp(18px, 2.1vw, 30px) !important;
+    }
+
+    .profile-page h1 {
+      color: var(--text-primary) !important;
+      font-weight: 700 !important;
+      letter-spacing: -.035em !important;
+      line-height: 1.25 !important;
+    }
+    .profile-page h2 {
+      color: var(--text-primary) !important;
+      font-weight: 600 !important;
+      letter-spacing: -.025em !important;
+      line-height: 1.35 !important;
+    }
+    .profile-page h3 { color: var(--text-primary) !important; }
+    .profile-page p { line-height: 1.65; }
+    .profile-page .text-white,
+    .profile-page .text-\[\#f5f6f8\] { color: var(--text-primary) !important; }
+    .profile-page .text-\[\#e3e6ec\],
+    .profile-page .text-\[\#d8dce4\],
+    .profile-page .text-neutral-300 { color: var(--text-secondary) !important; }
+    .profile-page .text-\[\#9ca3b1\],
+    .profile-page .text-\[\#a3a9b6\],
+    .profile-page .text-\[\#a9afbb\],
+    .profile-page .text-\[\#868d9c\],
+    .profile-page .text-\[\#7d8494\],
+    .profile-page .text-\[\#6b7282\] { color: var(--text-muted) !important; }
+    .profile-page .text-\[\#e2b04a\],
+    .profile-page .text-\[\#d4af37\] { color: var(--accent) !important; }
+
+    /* FIXED: Headshot styling - strictly scoped to Hero Card only, footer will NOT be distorted */
+    .profile-page .rounded-full.p-\[3px\] {
+      width: clamp(82px, 8vw, 104px) !important;
+      height: clamp(82px, 8vw, 104px) !important;
+      padding: 3px !important;
+      border: 2px solid var(--accent) !important;
+      background: var(--surface-raised) !important;
+      box-shadow: 0 0 0 4px var(--accent-soft);
+      overflow: hidden !important;
+      isolation: isolate;
+    }
+    .profile-page .hero-avatar-img {
+      width: 100% !important;
+      height: 100% !important;
+      border-radius: 50% !important;
+      object-fit: cover !important;
+      object-position: center 12% !important;
+      transform: scale(1.28) !important;
+      transform-origin: center 18% !important;
+    }
+
+    /* FIXED: Sticky footer avatar styling */
+    .footer-avatar {
+      width: 40px !important;
+      height: 40px !important;
+      border-radius: 9999px !important;
+      object-fit: cover !important;
+      object-position: top center !important;
+      transform: none !important;
+      display: block !important;
+    }
+
+    /* Badge beside the advocate's name — matched to Astrotalk reference */
+    .profile-page h1 + i + span,
+    .profile-page h1 ~ span {
+      background: #f5e6b3 !important;
+      color: #6b4e08 !important;
+      border: 1px solid rgba(226, 176, 74, .45) !important;
+      border-radius: 999px !important;
+      padding: 3px 10px !important;
+      font-size: 11px !important;
+      font-weight: 600 !important;
+      letter-spacing: .055em !important;
+      line-height: 1.35 !important;
+      white-space: nowrap !important;
+    }
+    html.light .profile-page h1 + i + span,
+    html.light .profile-page h1 ~ span {
+      background: #fff8df !important;
+      color: #8d6a16 !important;
+      border-color: #f0dfaa !important;
+    }
+
+    /* Buttons, chips, badges and controls */
+    .profile-page button,
+    .profile-page a { -webkit-tap-highlight-color: transparent; }
+    .profile-page button:focus-visible,
+    .profile-page a:focus-visible {
+      outline: 2px solid var(--accent-strong) !important;
+      outline-offset: 3px !important;
+    }
+    .profile-page .bg-\[\#181c25\],
+    .profile-page .bg-\[\#171b23\],
+    .profile-page .bg-\[\#11141a\],
+    .profile-page .bg-\[\#1e232d\],
+    .profile-page .bg-\[\#0d1015\] {
+      background-color: var(--surface-raised) !important;
+    }
+    .profile-page .border-\[\#171b23\],
+    .profile-page .border-\[\#1c212b\],
+    .profile-page .border-\[\#222836\],
+    .profile-page .border-\[\#262d3b\],
+    .profile-page .border-\[\#2b3342\],
+    .profile-page .border-\[\#30384a\],
+    .profile-page .border-\[\#343d50\] { border-color: var(--border) !important; }
+    .profile-page .rounded-3xl,
+    .profile-page .rounded-2xl { border-radius: var(--radius-card) !important; }
+    .profile-page .rounded-xl,
+    .profile-page .rounded-lg { border-radius: var(--radius-control) !important; }
+    .profile-page .bg-gradient-to-r.from-\[\#f3c862\] {
+      background: var(--accent-gradient) !important;
+      color: #2c240d !important;
+      box-shadow: 0 5px 16px rgba(225, 187, 70, .16);
+    }
+    .profile-page a[class*="bg-gradient-to-r"] { color: #2c240d !important; }
+    
+    .profile-page .bg-\[\#171b23\].border,
+    .profile-page span.bg-\[\#171b23\] {
+      background: var(--surface-soft) !important;
+      border-color: var(--border) !important;
+      color: var(--text-secondary) !important;
+    }
+    .profile-page a[class*="border-[#30384a]"],
+    .profile-page button[class*="border-[#30384a]"] {
+      background: var(--surface-raised) !important;
+      border-color: var(--border-strong) !important;
+      color: var(--text-primary) !important;
+    }
+    .profile-page a:hover,
+    .profile-page button:hover { transition: all .18s ease; }
+    .profile-page a[class*="border-[#30384a]"]:hover,
+    .profile-page button[class*="border-[#30384a]"]:hover {
+      border-color: var(--accent) !important;
+      background-color: var(--accent-soft) !important;
+    }
+
+    /* Content columns & 12-col Desktop grid */
+    .profile-page > div.lg\:px-8.lg\:mt-8 {
+      display: grid !important;
+      grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+      align-items: start !important;
+      column-gap: clamp(24px, 3vw, 44px) !important;
+      row-gap: 0 !important;
+      padding-left: clamp(16px, 3.2vw, 52px) !important;
+      padding-right: clamp(16px, 3.2vw, 52px) !important;
+      margin-top: 26px !important;
+    }
+    .profile-page > div.lg\:px-8.lg\:mt-8 > .lg\:col-span-8 {
+      grid-column: span 8 / span 8 !important;
+      min-width: 0 !important;
+    }
+    .profile-page > div.lg\:px-8.lg\:mt-8 > aside.lg\:col-span-4 {
+      grid-column: span 4 / span 4 !important;
+      min-width: 0 !important;
+      display: block !important;
+      position: sticky !important;
+      top: 88px !important;
+      align-self: start !important;
+    }
+
+    .profile-page section { scroll-margin-top: 90px; }
+    .profile-page section.border-t { border-color: var(--border) !important; }
+    .profile-page .order-1 p,
+    .profile-page .order-1 #full-bio { color: var(--text-secondary) !important; }
+    .profile-page .order-1 { margin-top: 0 !important; }
+    .profile-page .order-2,
+    .profile-page .order-3,
+    .profile-page .order-4,
+    .profile-page .order-5,
+    .profile-page .order-6,
+    .profile-page .order-7 {
+      margin-top: 24px !important;
+      padding-top: 20px !important;
+    }
+    .profile-page aside > div {
+      background: var(--surface-raised) !important;
+      border: 1px solid var(--border) !important;
+      border-radius: var(--radius-card) !important;
+      box-shadow: var(--card-shadow) !important;
+      padding: 18px !important;
+    }
+    .profile-page aside a { border-radius: var(--radius-control) !important; }
+    .profile-page aside .border-b,
+    .profile-page aside .border-t { border-color: var(--border) !important; }
+
+    /* Reviews styling */
+    .profile-page .order-6 > div.py-3 {
+      margin: 8px 0 !important;
+      padding: 13px 14px !important;
+      border: 1px solid var(--border) !important;
+      border-radius: 12px !important;
+      background: var(--surface-raised) !important;
+      box-shadow: var(--card-shadow);
+    }
+    .profile-page .order-6 > div.py-3 p { color: var(--text-secondary) !important; }
+    .profile-page .order-6 > div.py-3 .rounded-full {
+      border-color: var(--border) !important;
+      background: var(--accent-soft) !important;
+      color: var(--accent) !important;
+    }
+    .profile-page #tab-helpful,
+    .profile-page #tab-recent {
+      border-radius: 999px !important;
+      font-size: 13px !important;
+      padding: 6px 14px !important;
+    }
+    .profile-page #tab-helpful { background: var(--accent-soft) !important; color: var(--accent) !important; border-color: var(--border-strong) !important; }
+    .profile-page #tab-recent { background: var(--surface-raised) !important; color: var(--text-muted) !important; border-color: var(--border) !important; }
+
+    /* Social and contact cards */
+    .profile-page .order-7 > div,
+    .profile-page .lg\:hidden section > div {
+      background: var(--surface-raised) !important;
+      border-color: var(--border) !important;
+    }
+    .profile-page .order-7 a,
+    .profile-page .lg\:hidden section a.group {
+      background: var(--surface-soft) !important;
+      border-color: var(--border) !important;
+    }
+    .profile-page .order-7 a:hover,
+    .profile-page .lg\:hidden section a.group:hover { border-color: var(--accent) !important; }
+
+    /* Mobile sticky action bar */
+    body > .profile-page > div.fixed.bottom-0 {
+      width: 100% !important;
+      max-width: none !important;
+      left: 0 !important;
+      right: 0 !important;
+      padding-left: max(16px, env(safe-area-inset-left)) !important;
+      padding-right: max(16px, env(safe-area-inset-right)) !important;
+      background: color-mix(in srgb, var(--surface-raised) 94%, transparent) !important;
+      border-color: var(--border) !important;
+      backdrop-filter: blur(16px);
+    }
+    #toast {
+      background: var(--surface-raised) !important;
+      color: var(--text-primary) !important;
+      border-color: var(--border-strong) !important;
+    }
+
+    @media (max-width: 1023px) {
+      .profile-page > div.lg\:px-8.lg\:mt-8 {
+        display: flex !important;
+        flex-direction: column !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+      .profile-page > div.lg\:px-8.lg\:mt-8 > .lg\:col-span-8,
+      .profile-page > div.lg\:px-8.lg\:mt-8 > aside.lg\:col-span-4 {
+        grid-column: auto !important;
+        width: 100% !important;
+      }
+      .profile-page > div.lg\:px-8.lg\:mt-8 > aside.lg\:col-span-4 {
+        display: none !important;
+      }
+      .profile-page section {
+        padding-left: clamp(16px, 3vw, 28px) !important;
+        padding-right: clamp(16px, 3vw, 28px) !important;
+      }
+      .profile-page .order-7 { display: none !important; }
+      .profile-page > div:nth-of-type(1) { margin-top: 16px !important; }
+    }
+
+    @media (max-width: 640px) {
+      .profile-page > header .font-logo { font-size: 22px !important; }
+      .profile-page h1 { font-size: 24px !important; }
+      .profile-page h2 { font-size: 20px !important; }
+      .profile-page .order-6 > div.py-3 { padding: 12px !important; }
+      .profile-page > div:nth-of-type(2) > div { border-radius: 13px !important; padding: 17px !important; }
+      .profile-page > div.fixed.bottom-0 { gap: 8px !important; }
+      .profile-page > div.fixed.bottom-0 a { min-width: 0 !important; padding-left: 10px !important; padding-right: 10px !important; }
+      .profile-page > div:nth-of-type(1) { margin-top: 12px !important; padding-bottom: 10px !important; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+    }
+  </style>
+  <script>
+    try {
+      if (localStorage.getItem('chamberly-theme') === 'light') {
+        document.documentElement.classList.add('light');
+      }
+    } catch (e) {}
+  </script>
+</head>
+<body class="bg-[#050608] text-white antialiased min-h-screen">
+
+  <!-- Main Container -->
+  <div class="profile-page w-full max-w-none mx-auto bg-[#0a0c10] min-h-screen pb-28 lg:pb-16 relative border-x border-[#171b23]">
+    
+    <!-- Top Header Navigation — matched to Astrotalk reference layout -->
+    <header class="px-4 lg:px-8 py-2.5 lg:py-3 flex items-center justify-between border-b border-[#171b23] sticky top-0 bg-[#0a0c10]/95 backdrop-blur-md z-30">
+      <div class="flex items-center gap-3 lg:gap-6">
+        <i class="fa-solid fa-bars text-lg text-neutral-300 cursor-pointer lg:hidden"></i>
+        <!-- Chamberly Brand Logo -->
+        <span class="font-logo font-bold text-2xl lg:text-3xl tracking-normal text-white">Chamberly.</span>
+        
+        <!-- Desktop Nav Links -->
+        <nav class="hidden lg:flex items-center gap-6 ml-6 text-[14px] text-[#9ca3b1]">
+          <a href="#" class="text-white hover:text-[#e2b04a] transition">Find Lawyers</a>
+          <a href="#" class="hover:text-white transition">Practice Areas</a>
+          <a href="#" class="hover:text-white transition">Legal Insights</a>
+          <a href="#" class="hover:text-white transition">For Advocates</a>
+        </nav>
+      </div>
+
+      <div class="flex items-center gap-2.5 lg:gap-3">
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="Switch between light and dark theme" class="w-8 h-8 rounded-full bg-[#181c25] border border-[#2b3342] flex items-center justify-center text-[#cfd4de] text-sm cursor-pointer">
+          <i id="theme-icon" class="fa-solid fa-sun"></i>
+        </button>
+        <button class="w-8 h-8 rounded-full bg-[#181c25] border border-[#2b3342] flex items-center justify-center text-neutral-300 text-sm">
+          <i class="fa-regular fa-user"></i>
+        </button>
+        <a href="https://wa.me/919812345678" target="_blank" rel="noopener" class="hidden sm:inline-flex items-center gap-1.5 bg-gradient-to-r from-[#f3c862] via-[#e2b04a] to-[#c9972f] hover:from-[#e2b04a] hover:via-[#d4a03c] hover:to-[#b8871f] text-black px-3.5 py-1.5 rounded-full text-[13px] font-semibold transition active:scale-95 shadow-sm">
+          <span>Talk now</span>
+          <span class="opacity-80 font-normal">|</span>
+          <span>First Chat Free</span>
+          <i class="fa-solid fa-arrow-right text-[10px] ml-0.5"></i>
+        </a>
+      </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="px-4 lg:px-8 py-3 text-[12px] lg:text-[13px] text-[#7d8494] tracking-wider uppercase font-normal flex items-center gap-1.5 overflow-x-auto whitespace-nowrap">
+      <span>HOME</span>
+      <span>›</span>
+      <span>LAWYERS</span>
+      <span>›</span>
+      <span class="text-[#e2b04a]">ADV. VARUN JAIN</span>
+    </div>
+
+    <!-- Main Profile Card -->
+    <div class="px-3 lg:px-8">
+      <div class="bg-[#1a1610] rounded-3xl p-5 lg:p-7 border border-[#222836] relative shadow-2xl">
+        
+        <!-- Options Menu Dots -->
+        <button id="menu-btn" onclick="toggleMenu(event)" aria-haspopup="true" aria-expanded="false" class="lg:hidden absolute top-4 right-4 w-8 h-8 flex items-center justify-center text-[#868d9c] hover:text-white cursor-pointer" aria-label="Menu options">
+          <i class="fa-solid fa-ellipsis-vertical text-base"></i>
+        </button>
+
+        <!-- Dropdown Menu -->
+        <div id="profile-menu" class="hidden absolute top-12 right-4 w-56 bg-[#171b23] border border-[#262d3b] rounded-2xl shadow-2xl py-1.5 z-20" role="menu">
+          <button onclick="shareProfile()" role="menuitem" class="w-full flex items-center gap-3 px-4 py-2.5 text-[14px] text-[#e3e6ec] hover:bg-[#e2b04a]/10 cursor-pointer text-left">
+            <i class="fa-solid fa-share-nodes text-[#e2b04a] text-sm w-4 shrink-0"></i>
+            <span>Share profile</span>
+          </button>
+          <button onclick="downloadVCard()" role="menuitem" class="w-full flex items-center gap-3 px-4 py-2.5 text-[14px] text-[#e3e6ec] hover:bg-[#e2b04a]/10 cursor-pointer text-left">
+            <i class="fa-regular fa-address-card text-[#e2b04a] text-sm w-4 shrink-0"></i>
+            <span>Download virtual card</span>
+          </button>
+        </div>
+
+        <!-- Desktop: Share profile / Download card -->
+        <div class="hidden lg:flex absolute top-5 right-5 items-center gap-2.5">
+          <button onclick="shareProfile()" class="bg-[#181c25] hover:border-[#e2b04a]/50 border border-[#30384a] text-[#e3e6ec] px-4 py-2 rounded-xl flex items-center gap-2 text-[14px] font-semibold transition active:scale-95 cursor-pointer">
+            <i class="fa-solid fa-share-nodes text-[#e2b04a]"></i>
+            <span>Share profile</span>
+          </button>
+          <button onclick="downloadVCard()" class="bg-[#181c25] hover:border-[#e2b04a]/50 border border-[#30384a] text-[#e3e6ec] px-4 py-2 rounded-xl flex items-center gap-2 text-[14px] font-semibold transition active:scale-95 cursor-pointer">
+            <i class="fa-regular fa-address-card text-[#e2b04a]"></i>
+            <span>Download card</span>
+          </button>
+        </div>
+
+        <!-- Desktop Horizontal Container -->
+        <div class="lg:flex lg:items-center lg:justify-between lg:gap-8 lg:pr-10">
+          
+          <!-- Left: Avatar + Details -->
+          <div class="lg:flex lg:items-center lg:gap-6">
+            <!-- Hero Headshot with scoped hero class -->
+            <div class="flex justify-center mt-1 lg:mt-0 shrink-0">
+              <div class="relative">
+                <div class="w-24 h-24 lg:w-28 lg:h-28 rounded-full p-[3px] border-2 border-[#d4af37] flex items-center justify-center overflow-hidden bg-neutral-900">
+                  <img 
+                    src="https://jainlawcompany.com/wp-content/uploads/2026/02/Adv.-Varun-Jain.png" 
+                    alt="Adv. Varun Jain" 
+                    class="hero-avatar-img"
+                    onerror="this.src='https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=400&q=80'"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Name, Badges & Meta -->
+            <div class="text-center lg:text-left mt-3 lg:mt-0">
+              <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2">
+                <h1 class="text-[28px] lg:text-[32px] font-bold text-[#f5f6f8] tracking-wide">Adv. Varun Jain</h1>
+                <i class="fa-solid fa-circle-check text-emerald-500 text-base"></i>
+                <span class="bg-[#f5e6b3] text-[#6b4e08] border border-[#e2b04a]/50 text-[12px] font-medium px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+                  High Court
+                </span>
+              </div>
+              <p class="text-[14px] text-[#a3a9b6] mt-1 font-normal">Founder, Jain Law & Company</p>
+              
+              <!-- Meta: Expertise & Speaks -->
+              <div class="mt-4 pt-4 border-t border-[#1c212b] space-y-2.5 text-[13px] lg:text-[14px] text-left lg:pt-0 lg:border-t-0 lg:space-y-1.5">
+                <div class="flex items-start gap-2.5">
+                  <span class="text-[#e2b04a] text-sm mt-0.5">☆</span>
+                  <div class="text-[#7d8494] uppercase text-[12px] lg:text-[13px] tracking-wider w-24 shrink-0 font-medium">EXPERTISE</div>
+                  <div class="text-[#d8dce4] font-normal leading-relaxed">RERA · Commercial Disputes · NCLT & IBC · Litigation</div>
+                </div>
+                <div class="flex items-center gap-2.5">
+                  <span class="text-[#e2b04a] text-sm">文A</span>
+                  <div class="text-[#7d8494] uppercase text-[12px] lg:text-[13px] tracking-wider w-24 shrink-0 font-medium">SPEAKS</div>
+                  <div class="text-[#d8dce4] font-normal">English, Hindi</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- 3 Stats Counter Grid -->
+        <div class="lg:flex lg:items-center lg:justify-between lg:gap-8 mt-5 pt-4 border-t border-[#1c212b]">
+          <div class="grid grid-cols-3 divide-x divide-[#222836] text-center lg:flex-1 lg:max-w-2xl">
+            <div class="px-1 flex flex-col items-center">
+              <i class="fa-solid fa-briefcase text-sm text-[#d4af37] mb-1.5 opacity-90"></i>
+              <span class="text-[17px] font-semibold text-white tracking-tight">14+ yrs</span>
+              <span class="text-[12px] lg:text-[13px] font-medium text-[#7d8494] mt-0.5">Experience</span>
+            </div>
+
+            <div class="px-1 flex flex-col items-center">
+              <i class="fa-regular fa-folder-open text-sm text-[#d4af37] mb-1.5 opacity-90"></i>
+              <span class="text-[17px] font-semibold text-white tracking-tight">1,500+</span>
+              <span class="text-[12px] lg:text-[13px] font-medium text-[#7d8494] mt-0.5">Matters Handled</span>
+            </div>
+
+            <div class="px-1 flex flex-col items-center">
+              <i class="fa-solid fa-scale-balanced text-sm text-[#d4af37] mb-1.5 opacity-90"></i>
+              <span class="text-[17px] font-semibold text-white tracking-tight">30+</span>
+              <span class="text-[12px] lg:text-[13px] font-medium text-[#7d8494] mt-0.5">PAN India Network</span>
+            </div>
+          </div>
+
+          <!-- Desktop: Chat Now / Call Now -->
+          <div class="hidden lg:flex flex-col items-end gap-3 shrink-0">
+            <div class="text-right">
+              <p class="text-[12px] text-[#7d8494] mt-0.5">Bar Verified · Delhi High Court</p>
+            </div>
+            <div class="flex items-center gap-3">
+              <a href="https://wa.me/919812345678" target="_blank" class="bg-[#181c25] hover:bg-[#222836] border border-[#30384a] text-white px-5 py-2.5 rounded-xl flex items-center gap-2 text-[14px] font-semibold transition active:scale-95">
+                <i class="fa-regular fa-comment-dots text-[#e2b04a]"></i>
+                <span>Chat Now</span>
+              </a>
+              <a href="tel:+919812345678" class="bg-gradient-to-r from-[#f3c862] via-[#e2b04a] to-[#c9972f] hover:from-[#e2b04a] hover:via-[#d4a03c] hover:to-[#b8871f] text-black px-5 py-2.5 rounded-xl flex items-center gap-2 text-[14px] font-semibold transition active:scale-95 shadow-md">
+                <i class="fa-solid fa-phone"></i>
+                <span>Call Now</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Consultation CTA -->
+    <div class="px-3 mt-4 lg:hidden">
+      <div class="grid grid-cols-2 gap-2.5">
+        <a
+          href="mailto:varun.jain@jainlawco.in?subject=Consultation%20Enquiry&body=Hello%20Adv.%20Varun%20Jain%2C%0A%0AI%20would%20like%20to%20discuss%20a%20legal%20matter."
+          class="bg-[#11141a] border border-[#30384a] hover:border-[#e2b04a]/50 text-[#e3e6ec] rounded-2xl py-3 flex items-center justify-center gap-2 text-[14px] font-semibold active:scale-95 transition cursor-pointer"
+        >
+          <i class="fa-regular fa-paper-plane text-sm text-[#e2b04a]"></i>
+          <span>Send Enquiry</span>
+        </a>
+        <a
+          href="https://wa.me/919812345678?text=Hello%20Adv.%20Varun%20Jain%2C%20I%20would%20like%20to%20book%20a%20consultation."
+          target="_blank" rel="noopener"
+          class="bg-gradient-to-r from-[#f3c862] via-[#e2b04a] to-[#c9972f] hover:from-[#e2b04a] hover:via-[#d4a03c] hover:to-[#b8871f] text-black rounded-2xl py-3 flex items-center justify-center gap-2 text-[14px] font-semibold active:scale-95 transition cursor-pointer"
+        >
+          <i class="fa-regular fa-calendar-check text-sm"></i>
+          <span>Book Consultation</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- ======================================================== -->
+    <!-- DESKTOP 2-COLUMN GRID WRAPPER -->
+    <!-- ======================================================== -->
+    <div class="lg:px-8 lg:mt-8 lg:grid lg:grid-cols-12 lg:gap-8 items-start">
+      
+      <!-- LEFT COLUMN -->
+      <div class="flex flex-col lg:col-span-8">
+
+        <!-- About Section -->
+        <section class="order-1 px-5 lg:px-0 mt-7 lg:mt-0">
+          <h2 class="text-[22px] lg:text-[24px] font-semibold text-white tracking-wide">About Adv. Varun Jain</h2>
+          
+          <p class="text-[14px] lg:text-[15px] text-[#9ca3b1] leading-relaxed mt-2.5">
+            Adv. Varun Jain is the Founder of Jain Law & Company, delivering strategic legal solutions across Real Estate & RERA, Corporate & Commercial Disputes, NCLT / IBC insolvency, and High Court Litigation.
+          </p>
+
+          <div id="full-bio" class="hidden text-[14px] lg:text-[15px] text-[#9ca3b1] leading-relaxed mt-2 space-y-2">
+            <p>
+              With over 14+ years of courtroom experience in Delhi courts and regulatory tribunals, he approaches legal matters by understanding not only the legal issues but also the commercial and procedural considerations surrounding them.
+            </p>
+            <p>
+              His practice specializes in protecting client interests through proactive pre-litigation advisory, effective dispute mitigation, contractual safeguarding, and strategic representation before various appellate forums and High Courts.
+            </p>
+          </div>
+
+          <button 
+            id="toggle-bio-btn" 
+            onclick="toggleBio()"
+            class="text-[14px] text-[#e2b04a] font-semibold mt-2 inline-flex items-center gap-1.5 hover:underline focus:outline-none cursor-pointer"
+          >
+            <span id="btn-text">Read more</span>
+            <i id="btn-icon" class="fa-solid fa-chevron-down text-[10px] transition-transform duration-200"></i>
+          </button>
+        </section>
+
+        <!-- Areas of Expertise Section -->
+        <section class="order-3 lg:order-2 px-5 lg:px-0 mt-7 border-t border-[#171b23] pt-5">
+          <h2 class="text-[22px] lg:text-[24px] font-semibold text-white tracking-wide">Areas of expertise</h2>
+          <div class="flex flex-wrap gap-2.5 text-[14px] text-[#e3e6ec] mt-3.5">
+            <span class="bg-[#171b23] border border-[#262d3b] px-3 py-2 rounded-xl shadow-sm">Real Estate & RERA</span>
+            <span class="bg-[#171b23] border border-[#262d3b] px-3 py-2 rounded-xl shadow-sm">Corporate & Commercial</span>
+            <span class="bg-[#171b23] border border-[#262d3b] px-3 py-2 rounded-xl shadow-sm">NCLT & IBC Insolvency</span>
+            <span class="bg-[#171b23] border border-[#262d3b] px-3 py-2 rounded-xl shadow-sm">Strategic Litigation</span>
+            <span class="bg-[#171b23] border border-[#262d3b] px-3 py-2 rounded-xl shadow-sm">Corporate Advisory</span>
+            <span class="bg-[#171b23] border border-[#262d3b] px-3 py-2 rounded-xl shadow-sm">Criminal Law & Bail</span>
+          </div>
+        </section>
+
+        <!-- Key Qualifications Section -->
+        <section class="order-2 lg:order-3 px-5 lg:px-0 mt-7 border-t border-[#171b23] pt-5">
+          <h2 class="text-[22px] lg:text-[24px] font-semibold text-white tracking-wide">Key Qualifications</h2>
+          <div class="mt-3.5 space-y-4">
+            <div class="flex items-start gap-3.5">
+              <div class="w-9 h-9 rounded-xl bg-[#171b23] border border-[#262d3b] flex items-center justify-center shrink-0">
+                <i class="fa-solid fa-graduation-cap text-sm text-[#e2b04a]"></i>
+              </div>
+              <div>
+                <div class="text-[14px] lg:text-[15px] font-semibold text-[#f5f6f8]">B.A. LL.B. (Hons.)</div>
+                <div class="text-[13px] lg:text-[14px] text-[#9ca3b1] mt-0.5">National Law University, 2008</div>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3.5">
+              <div class="w-9 h-9 rounded-xl bg-[#171b23] border border-[#262d3b] flex items-center justify-center shrink-0">
+                <i class="fa-solid fa-shield-halved text-sm text-[#e2b04a]"></i>
+              </div>
+              <div>
+                <div class="text-[14px] lg:text-[15px] font-semibold text-[#f5f6f8]">Enrolled with Bar Council of Delhi</div>
+                <div class="text-[13px] lg:text-[14px] text-[#9ca3b1] mt-0.5">Enrolment No. D/XXXXX/2012</div>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3.5">
+              <div class="w-9 h-9 rounded-xl bg-[#171b23] border border-[#262d3b] flex items-center justify-center shrink-0">
+                <i class="fa-solid fa-users text-sm text-[#e2b04a]"></i>
+              </div>
+              <div>
+                <div class="text-[14px] lg:text-[15px] font-semibold text-[#f5f6f8]">Member, Delhi Bar Association</div>
+                <div class="text-[13px] lg:text-[14px] text-[#9ca3b1] mt-0.5">Since 2012</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Practice Qualifications & Chamber Details -->
+        <section class="order-4 lg:hidden px-5 mt-7 border-t border-[#171b23] pt-5">
+          <h2 class="text-[22px] lg:text-[24px] font-semibold text-white tracking-wide">Chamber & Credentials</h2>
+          <div class="mt-3.5 bg-[#11141a] p-4 rounded-2xl border border-[#1c212b] space-y-3 text-[14px] text-[#a9afbb]">
+            <div class="flex items-start gap-2.5">
+              <i class="fa-solid fa-location-dot text-[#e2b04a] mt-1 text-sm w-4 shrink-0"></i>
+              <div>
+                <span class="text-white font-medium block">Chamber Office:</span>
+                625A, Western Wing, Tis Hazari Courts, Delhi - 110054
+              </div>
+            </div>
+            <div class="flex items-center gap-2.5">
+              <i class="fa-solid fa-id-card text-[#e2b04a] text-sm w-4 shrink-0"></i>
+              <div>
+                <span class="text-white font-medium">Bar Council Affiliation:</span> Bar Council of Delhi
+              </div>
+            </div>
+            <div class="flex items-center gap-2.5">
+              <i class="fa-solid fa-city text-[#e2b04a] text-sm w-4 shrink-0"></i>
+              <div>
+                <span class="text-white font-medium">Presence:</span> Pan-India Network across 15+ Cities
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Courts & Jurisdiction Badges -->
+        <section class="order-5 lg:order-4 px-5 lg:px-0 mt-7 border-t border-[#171b23] pt-5">
+          <h2 class="text-[22px] lg:text-[24px] font-semibold text-white tracking-wide">Court Appearances & Forums</h2>
+          <div class="mt-3.5 flex flex-wrap gap-2 text-[14px]">
+            <span class="bg-[#171b23] border border-[#262d3b] text-[#d8dce4] px-3 py-1.5 rounded-lg flex items-center gap-2">
+              <i class="fa-solid fa-landmark text-xs text-[#e2b04a]"></i> Supreme Court of India
+            </span>
+            <span class="bg-[#171b23] border border-[#262d3b] text-[#d8dce4] px-3 py-1.5 rounded-lg flex items-center gap-2">
+              <i class="fa-solid fa-landmark text-xs text-[#e2b04a]"></i> Delhi High Court
+            </span>
+            <span class="bg-[#171b23] border border-[#262d3b] text-[#d8dce4] px-3 py-1.5 rounded-lg flex items-center gap-2">
+              <i class="fa-solid fa-gavel text-xs text-[#e2b04a]"></i> NCLT & NCLAT
+            </span>
+            <span class="bg-[#171b23] border border-[#262d3b] text-[#d8dce4] px-3 py-1.5 rounded-lg flex items-center gap-2">
+              <i class="fa-solid fa-building-shield text-xs text-[#e2b04a]"></i> RERA & REAT
+            </span>
+            <span class="bg-[#171b23] border border-[#262d3b] text-[#d8dce4] px-3 py-1.5 rounded-lg flex items-center gap-2">
+              <i class="fa-solid fa-location-arrow text-xs text-[#e2b04a]"></i> Tis Hazari & District Courts
+            </span>
+          </div>
+        </section>
+
+        <!-- Client Reviews Section -->
+        <section class="order-6 lg:order-5 px-5 lg:px-0 mt-7 border-t border-[#171b23] pt-5">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+            <h2 class="text-[22px] lg:text-[24px] font-semibold text-white tracking-wide">Client Reviews</h2>
+            <span class="text-[13px] font-medium text-[#a3a9b6] bg-[#181c25] border border-[#262d3b] px-2.5 py-1 rounded-full">
+              <span class="text-[#e2b04a] font-semibold">5.0</span> (1,240+ reviews)
+            </span>
+          </div>
+
+          <!-- Functional Review Filter Tabs -->
+          <div class="flex items-center gap-2 mb-4 text-[14px]">
+            <button 
+              id="tab-helpful" 
+              onclick="filterReviews('helpful')"
+              class="bg-[#e2b04a]/20 text-[#e2b04a] border border-[#e2b04a]/40 px-3.5 py-1 rounded-full font-semibold transition cursor-pointer"
+            >
+              Most helpful
+            </button>
+            <button 
+              id="tab-recent" 
+              onclick="filterReviews('recent')"
+              class="bg-[#11141a] text-[#7d8494] border border-[#222836] px-3.5 py-1 rounded-full font-semibold transition cursor-pointer"
+            >
+              Recent
+            </button>
+          </div>
+
+          <!-- Review Item 1 -->
+          <div class="py-3 border-b border-[#171b23]">
+            <div class="flex items-center gap-2.5 mb-1.5">
+              <div class="w-8 h-8 rounded-full bg-[#1e232d] text-[#e2b04a] font-bold text-xs flex items-center justify-center border border-[#343d50]">
+                S
+              </div>
+              <div>
+                <div class="text-[14px] font-semibold text-[#f5f6f8]">Siddharth Oberoi</div>
+                <div class="flex text-[12px] text-[#e2b04a]">
+                  ★★★★★ <span class="text-[#6b7282] ml-2 font-normal text-[12px]">2 days ago</span>
+                </div>
+              </div>
+            </div>
+            <p class="text-[14px] text-[#d8dce4] leading-relaxed pl-10">
+              Delayed flat handover case me builder ne refund dene se mana kar diya tha. Varun Sir ne RERA process aur calculation bilkul clear samjhaya aur legal notice draft karwaya. Highly recommended legal advisor.
+            </p>
+          </div>
+
+          <!-- Review Item 2 -->
+          <div class="py-3 border-b border-[#171b23]">
+            <div class="flex items-center gap-2.5 mb-1.5">
+              <div class="w-8 h-8 rounded-full bg-[#1e232d] text-[#e2b04a] font-bold text-xs flex items-center justify-center border border-[#343d50]">
+                M
+              </div>
+              <div>
+                <div class="text-[14px] font-semibold text-[#f5f6f8]">Mohit Singhania</div>
+                <div class="flex text-[12px] text-[#e2b04a]">
+                  ★★★★★ <span class="text-[#6b7282] ml-2 font-normal text-[12px]">1 week ago</span>
+                </div>
+              </div>
+            </div>
+            <p class="text-[14px] text-[#d8dce4] leading-relaxed pl-10">
+              NCLT recovery petition ke liye consult kiya tha. Call par practical ground realities aur legal remedy dono crystal clear batayi bina kisi unnecessary confusion ke.
+            </p>
+          </div>
+
+          <!-- Review Item 3 -->
+          <div class="py-3 border-b border-[#171b23]">
+            <div class="flex items-center gap-2.5 mb-1.5">
+              <div class="w-8 h-8 rounded-full bg-[#1e232d] text-[#e2b04a] font-bold text-xs flex items-center justify-center border border-[#343d50]">
+                R
+              </div>
+              <div>
+                <div class="text-[14px] font-semibold text-[#f5f6f8]">Rohan Malhotra</div>
+                <div class="flex text-[12px] text-[#e2b04a]">
+                  ★★★★★ <span class="text-[#6b7282] ml-2 font-normal text-[12px]">2 weeks ago</span>
+                </div>
+              </div>
+            </div>
+            <p class="text-[14px] text-[#d8dce4] leading-relaxed pl-10">
+              Commercial contract dispute me payment recover karna tha. Varun Sir ne pehle hi meeting me poori strategy samjha di aur time par legal notice bhejwaya. Result positive raha, communication bhi hamesha transparent.
+            </p>
+          </div>
+
+          <!-- View All Reviews Button -->
+          <div class="pt-4 text-center">
+            <button class="text-[14px] text-[#e2b04a] font-semibold hover:underline flex items-center justify-center gap-1.5 mx-auto cursor-pointer">
+              <span>View all 1,240+ reviews</span>
+              <i class="fa-solid fa-chevron-down text-[11px]"></i>
+            </button>
+          </div>
+        </section>
+
+        <!-- Desktop Social Network Section -->
+        <section class="order-7 hidden lg:block mt-7 border-t border-[#171b23] pt-5">
+          <h2 class="text-[22px] lg:text-[24px] font-semibold text-white tracking-wide">Social Network</h2>
+          <div class="mt-3.5 bg-[#11141a] p-5 rounded-3xl border border-[#1c212b]">
+            <p class="text-[14px] text-[#9ca3b1] mb-4">Reach Adv. Varun Jain on his official channels</p>
+            <div class="grid grid-cols-2 gap-3">
+              <a href="https://wa.me/919812345678" target="_blank" rel="noopener" aria-label="WhatsApp" class="group flex items-center gap-3 p-3 rounded-2xl bg-[#171b23] border border-[#262d3b] hover:border-[#e2b04a]/50 active:scale-[0.98] transition">
+                <span class="w-11 h-11 rounded-xl flex items-center justify-center shrink-0" style="background:rgba(37,211,102,.12);border:1px solid rgba(37,211,102,.35)">
+                  <i class="fa-brands fa-whatsapp text-[17px]" style="color:#25D366"></i>
+                </span>
+                <span class="min-w-0">
+                  <span class="block text-[14px] font-semibold text-white leading-tight">WhatsApp</span>
+                  <span class="block text-[12px] text-[#9ca3b1] mt-0.5">Message</span>
+                </span>
+              </a>
+              <a href="https://www.linkedin.com/in/varunjain" target="_blank" rel="noopener" aria-label="LinkedIn" class="group flex items-center gap-3 p-3 rounded-2xl bg-[#171b23] border border-[#262d3b] hover:border-[#e2b04a]/50 active:scale-[0.98] transition">
+                <span class="w-11 h-11 rounded-xl flex items-center justify-center shrink-0" style="background:rgba(55,143,233,.12);border:1px solid rgba(55,143,233,.35)">
+                  <i class="fa-brands fa-linkedin-in text-[17px]" style="color:#378FE9"></i>
+                </span>
+                <span class="min-w-0">
+                  <span class="block text-[14px] font-semibold text-white leading-tight">LinkedIn</span>
+                  <span class="block text-[12px] text-[#9ca3b1] mt-0.5">Connect</span>
+                </span>
+              </a>
+              <a href="#" target="_blank" rel="noopener" aria-label="Instagram" class="group flex items-center gap-3 p-3 rounded-2xl bg-[#171b23] border border-[#262d3b] hover:border-[#e2b04a]/50 active:scale-[0.98] transition">
+                <span class="w-11 h-11 rounded-xl flex items-center justify-center shrink-0" style="background:rgba(220,39,67,.12);border:1px solid rgba(220,39,67,.35)">
+                  <i class="fa-brands fa-instagram text-[17px]" style="background:linear-gradient(45deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent"></i>
+                </span>
+                <span class="min-w-0">
+                  <span class="block text-[14px] font-semibold text-white leading-tight">Instagram</span>
+                  <span class="block text-[12px] text-[#9ca3b1] mt-0.5">Follow</span>
+                </span>
+              </a>
+              <a href="#" target="_blank" rel="noopener" aria-label="Facebook" class="group flex items-center gap-3 p-3 rounded-2xl bg-[#171b23] border border-[#262d3b] hover:border-[#e2b04a]/50 active:scale-[0.98] transition">
+                <span class="w-11 h-11 rounded-xl flex items-center justify-center shrink-0" style="background:rgba(24,119,242,.12);border:1px solid rgba(24,119,242,.35)">
+                  <i class="fa-brands fa-facebook-f text-[17px]" style="color:#1877F2"></i>
+                </span>
+                <span class="min-w-0">
+                  <span class="block text-[14px] font-semibold text-white leading-tight">Facebook</span>
+                  <span class="block text-[12px] text-[#9ca3b1] mt-0.5">Follow</span>
+                </span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- RIGHT COLUMN - Desktop Sticky Card -->
+      <aside class="hidden lg:block lg:col-span-4 sticky top-20 space-y-5">
+        
+        <div class="bg-[#11141a] rounded-3xl p-5 border border-[#222836] shadow-xl">
+          <div class="flex items-center justify-between pb-3 border-b border-[#1c212b]">
+            <span class="text-[12px] uppercase tracking-wider text-[#7d8494] font-medium">Consultation</span>
+            <span class="text-xs text-emerald-400 font-medium">⚡ Connects in &lt;60s</span>
+          </div>
+
+          <div class="mt-4 space-y-3">
+            <a href="mailto:varun.jain@jainlawco.in?subject=Consultation%20Enquiry&body=Hello%20Adv.%20Varun%20Jain%2C%0A%0AI%20would%20like%20to%20discuss%20a%20legal%20matter." class="w-full bg-[#181c25] hover:bg-[#202533] border border-[#30384a] text-white py-3 rounded-2xl flex items-center justify-center gap-2.5 text-[14px] font-semibold transition active:scale-98">
+              <i class="fa-regular fa-paper-plane text-[#e2b04a]"></i>
+              <span>Send Enquiry</span>
+            </a>
+
+            <a href="https://wa.me/919812345678?text=Hello%20Adv.%20Varun%20Jain%2C%20I%20would%20like%20to%20book%20a%20consultation." target="_blank" rel="noopener" class="w-full bg-gradient-to-r from-[#f3c862] via-[#e2b04a] to-[#c9972f] hover:from-[#e2b04a] hover:via-[#d4a03c] hover:to-[#b8871f] text-black py-3 rounded-2xl flex items-center justify-center gap-2.5 text-[14px] font-semibold transition active:scale-98 shadow-md">
+              <i class="fa-regular fa-calendar-check"></i>
+              <span>Book Consultation</span>
+            </a>
+          </div>
+
+          <div class="mt-4 pt-4 border-t border-[#1c212b] space-y-2 text-[13px] text-[#9ca3b1]">
+            <div class="flex items-center gap-2">
+              <i class="fa-solid fa-circle-check text-emerald-500 text-xs"></i>
+              <span>Verified Bar Council Enrollment</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i class="fa-solid fa-lock text-[#e2b04a] text-xs"></i>
+              <span>100% Confidential & Secure</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i class="fa-solid fa-location-dot text-[#e2b04a] text-xs"></i>
+              <span>Tis Hazari Courts Chamber, Delhi</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-[#11141a] rounded-3xl p-5 border border-[#222836] shadow-xl">
+          <h3 class="text-[17px] font-semibold text-white tracking-wide mb-3">Connect & Links</h3>
+          <div class="space-y-2.5 text-[14px]">
+            <a href="https://www.jainlawco.in" target="_blank" class="flex items-center justify-between p-2.5 rounded-xl bg-[#171b23] hover:bg-[#1e232d] border border-[#262d3b] text-[#d8dce4] transition">
+              <span class="flex items-center gap-2.5"><i class="fa-solid fa-globe text-[#e2b04a]"></i> Official Website</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-xs text-[#7d8494]"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/varunjain" target="_blank" class="flex items-center justify-between p-2.5 rounded-xl bg-[#171b23] hover:bg-[#1e232d] border border-[#262d3b] text-[#d8dce4] transition">
+              <span class="flex items-center gap-2.5"><i class="fa-brands fa-linkedin-in text-[#378FE9]"></i> LinkedIn Profile</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-xs text-[#7d8494]"></i>
+            </a>
+            <a href="mailto:varun.jain@jainlawco.in" class="flex items-center justify-between p-2.5 rounded-xl bg-[#171b23] hover:bg-[#1e232d] border border-[#262d3b] text-[#d8dce4] transition">
+              <span class="flex items-center gap-2.5"><i class="fa-regular fa-envelope text-[#e2b04a]"></i> Email Chamber</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-xs text-[#7d8494]"></i>
+            </a>
+          </div>
+        </div>
+
+      </aside>
+
+    </div>
+
+    <!-- Mobile Contact & Social Links Section -->
+    <div class="lg:hidden">
+      <section class="px-5 mt-7 border-t border-[#171b23] pt-5">
+        <h2 class="text-[22px] lg:text-[24px] font-semibold text-white tracking-wide">Contact & Social Links</h2>
+        <div class="mt-3.5 bg-[#11141a] p-4 rounded-2xl border border-[#1c212b] space-y-4 text-[14px]">
+          <div class="flex items-center justify-between gap-3">
+            <div class="flex items-center gap-3 min-w-0">
+              <i class="fa-solid fa-phone text-[#e2b04a] text-sm w-4 shrink-0"></i>
+              <span class="text-[#d8dce4]">+91 98123 45678</span>
+            </div>
+            <a href="tel:+919812345678" class="shrink-0 border border-[#30384a] hover:border-[#e2b04a]/50 text-[#e3e6ec] px-3.5 py-1.5 rounded-lg text-[14px] font-semibold">Call</a>
+          </div>
+
+          <div class="flex items-center justify-between gap-3">
+            <div class="flex items-center gap-3 min-w-0">
+              <i class="fa-regular fa-envelope text-[#e2b04a] text-sm w-4 shrink-0"></i>
+              <span class="text-[#d8dce4] truncate">varun.jain@jainlawco.in</span>
+            </div>
+            <a href="mailto:varun.jain@jainlawco.in" class="shrink-0 border border-[#30384a] hover:border-[#e2b04a]/50 text-[#e3e6ec] px-3.5 py-1.5 rounded-lg text-[14px] font-semibold">Email</a>
+          </div>
+
+          <div class="flex items-center justify-between gap-3">
+            <div class="flex items-center gap-3 min-w-0">
+              <i class="fa-solid fa-globe text-[#e2b04a] text-sm w-4 shrink-0"></i>
+              <span class="text-[#d8dce4] truncate">www.jainlawco.in</span>
+            </div>
+            <a href="https://www.jainlawco.in" target="_blank" rel="noopener" class="shrink-0 border border-[#30384a] hover:border-[#e2b04a]/50 text-[#e3e6ec] px-3.5 py-1.5 rounded-lg text-[14px] font-semibold">Website</a>
+          </div>
+        </div>
+
+        <h3 class="mt-5 text-[17px] font-semibold text-white tracking-wide">Social Network</h3>
+        <div class="mt-3 bg-[#11141a] p-4 rounded-3xl border border-[#1c212b]">
+          <p class="text-[14px] text-[#9ca3b1] mb-3.5">Reach Adv. Varun Jain on his official channels</p>
+          <div class="grid grid-cols-2 gap-2.5">
+            <a href="https://wa.me/919812345678" target="_blank" rel="noopener" class="group flex items-center gap-3 p-3 rounded-2xl bg-[#171b23] border border-[#262d3b] hover:border-[#e2b04a]/50 active:scale-[0.98] transition">
+              <span class="w-11 h-11 rounded-xl flex items-center justify-center shrink-0" style="background:rgba(37,211,102,.12);border:1px solid rgba(37,211,102,.35)">
+                <i class="fa-brands fa-whatsapp text-[17px]" style="color:#25D366"></i>
+              </span>
+              <span class="min-w-0">
+                <span class="block text-[14px] font-semibold text-white leading-tight">WhatsApp</span>
+                <span class="block text-[12px] text-[#9ca3b1] mt-0.5">Message</span>
+              </span>
+            </a>
+            <a href="https://www.linkedin.com/in/varunjain" target="_blank" rel="noopener" class="group flex items-center gap-3 p-3 rounded-2xl bg-[#171b23] border border-[#262d3b] hover:border-[#e2b04a]/50 active:scale-[0.98] transition">
+              <span class="w-11 h-11 rounded-xl flex items-center justify-center shrink-0" style="background:rgba(55,143,233,.12);border:1px solid rgba(55,143,233,.35)">
+                <i class="fa-brands fa-linkedin-in text-[17px]" style="color:#378FE9"></i>
+              </span>
+              <span class="min-w-0">
+                <span class="block text-[14px] font-semibold text-white leading-tight">LinkedIn</span>
+                <span class="block text-[12px] text-[#9ca3b1] mt-0.5">Connect</span>
+              </span>
+            </a>
+            <a href="#" target="_blank" rel="noopener" aria-label="Instagram" class="group flex items-center gap-3 p-3 rounded-2xl bg-[#171b23] border border-[#262d3b] hover:border-[#e2b04a]/50 active:scale-[0.98] transition">
+              <span class="w-11 h-11 rounded-xl flex items-center justify-center shrink-0" style="background:rgba(220,39,67,.12);border:1px solid rgba(220,39,67,.35)">
+                <i class="fa-brands fa-instagram text-[17px]" style="background:linear-gradient(45deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent"></i>
+              </span>
+              <span class="min-w-0">
+                <span class="block text-[14px] font-semibold text-white leading-tight">Instagram</span>
+                <span class="block text-[12px] text-[#9ca3b1] mt-0.5">Follow</span>
+              </span>
+            </a>
+            <a href="#" target="_blank" rel="noopener" aria-label="Facebook" class="group flex items-center gap-3 p-3 rounded-2xl bg-[#171b23] border border-[#262d3b] hover:border-[#e2b04a]/50 active:scale-[0.98] transition">
+              <span class="w-11 h-11 rounded-xl flex items-center justify-center shrink-0" style="background:rgba(24,119,242,.12);border:1px solid rgba(24,119,242,.35)">
+                <i class="fa-brands fa-facebook-f text-[17px]" style="color:#1877F2"></i>
+              </span>
+              <span class="min-w-0">
+                <span class="block text-[14px] font-semibold text-white leading-tight">Facebook</span>
+                <span class="block text-[12px] text-[#9ca3b1] mt-0.5">Follow</span>
+              </span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Sticky Bottom Bar (FIXED: Image properly centered and framed) -->
+    <div class="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-[#07090d]/95 backdrop-blur-md px-4 py-2.5 border-t border-[#1c212b] flex items-center justify-between z-40 lg:hidden">
+      
+      <div class="flex items-center gap-2.5">
+        <div class="relative w-10 h-10 shrink-0">
+          <img 
+            src="https://jainlawcompany.com/wp-content/uploads/2026/02/Adv.-Varun-Jain.png" 
+            alt="Adv. Varun Jain" 
+            class="footer-avatar border border-[#4a5265]"
+            onerror="this.src='https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=150&q=80'"
+          />
+        </div>
+        <div class="flex flex-col">
+          <div class="flex items-center gap-1">
+            <span class="text-[14px] font-semibold text-white tracking-tight">Bar Verified</span>
+            <i class="fa-solid fa-circle-check text-emerald-400 text-[11px]"></i>
+          </div>
+          <span class="text-[12px] text-[#9ca3b1]">Avg. connect &lt; 60s</span>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <a href="https://wa.me/919812345678" target="_blank" class="bg-[#181c25] border border-[#30384a] hover:border-[#e2b04a]/50 text-white px-3.5 py-1.5 rounded-xl flex flex-col items-center justify-center min-w-[95px] active:scale-95 transition cursor-pointer">
+          <div class="flex items-center gap-1.5 text-[14px] font-semibold">
+            <i class="fa-regular fa-comment-dots text-[11px] text-[#e2b04a]"></i>
+            <span>Chat now</span>
+          </div>
+          <span class="text-[12px] text-emerald-400 font-medium leading-tight">Online</span>
+        </a>
+
+        <a href="tel:+919812345678" class="bg-[#181c25] border border-[#30384a] hover:border-[#e2b04a]/50 text-white px-3.5 py-1.5 rounded-xl flex flex-col items-center justify-center min-w-[95px] active:scale-95 transition cursor-pointer">
+          <div class="flex items-center gap-1.5 text-[14px] font-semibold">
+            <i class="fa-solid fa-phone text-[11px] text-emerald-400"></i>
+            <span>Call now</span>
+          </div>
+          <span class="text-[12px] text-[#7d8494] leading-tight">Instant call</span>
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="fixed left-1/2 -translate-x-1/2 bottom-24 z-50 hidden bg-[#171b23] border border-[#262d3b] text-[#e3e6ec] text-[14px] px-4 py-2 rounded-full shadow-2xl"></div>
+
+  <!-- Functional Scripts -->
+  <script>
+    function toggleBio() {
+      const fullBio = document.getElementById('full-bio');
+      const btnText = document.getElementById('btn-text');
+      const btnIcon = document.getElementById('btn-icon');
+
+      if (fullBio.classList.contains('hidden')) {
+        fullBio.classList.remove('hidden');
+        btnText.textContent = 'Read less';
+        btnIcon.classList.add('rotate-180');
+      } else {
+        fullBio.classList.add('hidden');
+        btnText.textContent = 'Read more';
+        btnIcon.classList.remove('rotate-180');
+      }
+    }
+
+    function filterReviews(type) {
+      const helpfulBtn = document.getElementById('tab-helpful');
+      const recentBtn = document.getElementById('tab-recent');
+
+      const activeClasses = ['bg-[#e2b04a]/20', 'text-[#e2b04a]', 'border-[#e2b04a]/40'];
+      const inactiveClasses = ['bg-[#11141a]', 'text-[#7d8494]', 'border-[#222836]'];
+
+      const setActive = (btn) => {
+        inactiveClasses.forEach(c => btn.classList.remove(c));
+        activeClasses.forEach(c => btn.classList.add(c));
+      };
+      const setInactive = (btn) => {
+        activeClasses.forEach(c => btn.classList.remove(c));
+        inactiveClasses.forEach(c => btn.classList.add(c));
+      };
+
+      if (type === 'helpful') {
+        setActive(helpfulBtn);
+        setInactive(recentBtn);
+      } else {
+        setActive(recentBtn);
+        setInactive(helpfulBtn);
+      }
+    }
+
+    let toastTimer;
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.classList.remove('hidden');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => t.classList.add('hidden'), 2200);
+    }
+
+    function toggleMenu(e) {
+      e.stopPropagation();
+      const menu = document.getElementById('profile-menu');
+      const btn = document.getElementById('menu-btn');
+      const open = menu.classList.toggle('hidden') === false;
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+    function closeMenu() {
+      document.getElementById('profile-menu').classList.add('hidden');
+      document.getElementById('menu-btn').setAttribute('aria-expanded', 'false');
+    }
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('#profile-menu')) closeMenu();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeMenu();
+    });
+
+    async function shareProfile() {
+      closeMenu();
+      const data = {
+        title: 'Adv. Varun Jain - Chamberly',
+        text: 'View the profile of Adv. Varun Jain, Founder, Jain Law & Company on Chamberly.',
+        url: window.location.href
+      };
+      try {
+        if (navigator.share) {
+          await navigator.share(data);
+          return;
+        }
+      } catch (err) {
+        if (err && err.name === 'AbortError') return;
+      }
+      try {
+        await navigator.clipboard.writeText(data.url);
+        showToast('Profile link copied');
+      } catch (err) {
+        window.prompt('Copy this profile link:', data.url);
+      }
+    }
+
+    function downloadVCard() {
+      closeMenu();
+      const vcard = [
+        'BEGIN:VCARD',
+        'VERSION:3.0',
+        'FN:Adv. Varun Jain',
+        'N:Jain;Varun;;Adv.;',
+        'ORG:Jain Law & Company',
+        'TITLE:Founder',
+        'TEL;TYPE=WORK,VOICE:+919812345678',
+        'EMAIL;TYPE=WORK:varun.jain@jainlawco.in',
+        'URL:https://www.jainlawco.in',
+        'URL;TYPE=LinkedIn:https://www.linkedin.com/in/varunjain',
+        'ADR;TYPE=WORK:;;625A\\, Western Wing\\, Tis Hazari Courts;Delhi;;110054;India',
+        'NOTE:Advocate - RERA\\, Commercial Disputes\\, NCLT & IBC\\, Litigation. Profile on Chamberly.',
+        'END:VCARD'
+      ].join('\r\n');
+
+      const blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'Adv-Varun-Jain.vcf';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+      showToast('Virtual card downloaded');
+    }
+
+    function updateThemeIcon() {
+      const icon = document.getElementById('theme-icon');
+      const isLight = document.documentElement.classList.contains('light');
+      icon.className = isLight ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
+    }
+
+    function toggleTheme() {
+      const root = document.documentElement;
+      root.classList.toggle('light');
+      try {
+        localStorage.setItem('chamberly-theme', root.classList.contains('light') ? 'light' : 'dark');
+      } catch (e) {}
+      updateThemeIcon();
+    }
+
+    updateThemeIcon();
+  </script>
+</body>
+</html>
